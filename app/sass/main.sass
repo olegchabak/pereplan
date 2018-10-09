@@ -1,0 +1,297 @@
+@import "vars"
+@import "fonts"
+@import "libs"
+
+::placeholder
+	color: #666
+
+::selection
+	background-color: $accent
+	color: #fff
+*
+	outline: none
+body
+	display: flex
+	flex-direction: column
+	font-size: 20px
+	min-width: 320px
+	min-height: 100vh
+	position: relative
+	line-height: 1.65
+	font-family: $default-font
+	overflow-x: hidden
+	color: $text
+	input, textarea
+		border: #666 1px solid
+		outline: none
+		&:focus:required:invalid
+			border-color: red
+		&:required:valid
+			border-color: green
+
+.body-wrap
+	flex-grow: 2
+	height: 100%
+img
+	display: inline-block
+	max-width: 100%
+	height: auto
+	&.w-100
+		width: 100%
+.img-box
+	width: 100%
+	text-align: center
+a
+	color: $blue
+	text-decoration: none
+	transition: color .25s ease
+	&:hover, &:focus
+		color: $accent
+		text-decoration: none
+
+.text-center
+	text-align: center
+
+b, strong
+	font-weight: bold
+.btn
+	display: inline-block
+	margin: auto
+	border: 1px solid $accent
+	max-width: 100%
+	width: 200px
+	text-align: center
+	background-color: transparent
+	text-transform: uppercase
+	font-size: 14px
+	color: $accent
+	padding: 2px 5px
+	border-radius: 2px
+	text-decoration: none
+	cursor: pointer
+	transition: background-color .25s ease, color .25s ease
+	&:hover, &:focus
+		color: #ffffff
+		background-color: $accent
+		text-decoration: none
+#header
+	margin-bottom: 30px
+	.top-bar
+		color: $gray
+		&-links
+			display: flex
+			justify-content: space-between
+			align-items: center
+			padding-top: 10px
+			padding-bottom: 10px
+			border-bottom: 1px solid lighten($gray, 30%)
+			.contacts
+				display: flex
+				text-align: right
+				a
+					color: inherit
+					display: inline-block
+					&:last-child
+						margin-left: 30px
+					&:hover, &:focus
+						color: $accent
+
+	.top-menu
+		display: flex
+		padding-bottom: 10px
+		padding-top: 10px
+		.logo
+			max-width: 160px
+			height: auto
+			a
+				width: 100%
+				display: flex
+				align-items: center
+				justify-content: center
+				text-decoration: none
+
+
+				span
+					display: inline-block
+					margin-left: 10px
+					text-transform: uppercase
+					color: $gray
+					font-size: 25px
+				svg
+					path
+						transition: fill .25s ease
+					.red
+						fill: $accent
+					.black
+						fill: #000
+			&:hover, &:focus
+				svg
+					.red
+						fill: $blue
+					.black
+						fill: $text
+
+		.fixed-button
+			display: none
+		.menu
+			display: flex
+			flex-basis: 100%
+			list-style: none
+			justify-content: flex-end
+			li
+				position: relative
+				margin-left: 30px
+				text-transform: uppercase
+				&::after
+					position: absolute
+					display: block
+					content: ''
+					width: 100%
+					height: 1px
+					background-color: $accent
+					bottom: 0
+					left: 0
+					transform-origin: 0 0
+					transform: scale(0)
+					transition: .45s ease
+				a
+					color: inherit
+					display: block
+					&:hover, &:focus
+						color: $accent
+				&:hover, &:focus
+					&::after
+						transform: scale(1)
+
+		.hamburger
+			display: none
+
+
+
+// Main Page
+.first_screen
+	h2
+		margin-top: 50px
+		font-size: 40px
+
+		text-transform: uppercase
+		letter-spacing: 3px
+		span
+			font-weight: normal
+			color: $blue
+			text-transform: lowercase
+
+// About Page
+.about
+	h1, .before_h1
+		display: inline
+		font-size: inherit
+
+	ul
+		line-height: 2
+		list-style: none
+		li
+			&:before
+				content: '✔'
+				margin-right: 10px
+				color: $blue
+.primery
+	h2
+		margin-top: 60px
+	table
+		width: 100%
+		max-width: 700px
+		margin: 20px auto 30px
+		font-size: 16px
+		td, th
+			text-align: center
+			border: 1px solid
+			padding: 5px 10px
+		td
+			&:nth-child(3)
+				text-align: left
+	.img-box
+		margin-bottom: 30px
+		img
+			max-width: 1000px
+
+.callback
+	margin-top: 60px
+	padding-top: 60px
+	padding-bottom: 60px
+	background-color: lighten($gray, 30%)
+	h2
+		margin-bottom: 30px
+	input
+		padding: 3px 15px
+		background-color: transparent
+		border: 1px $gray solid
+		border-radius: 3px
+		transition: background-color .25s ease
+		&:hover, &:focus
+			background-color: rgba(#fff, .3)
+	label
+		font-size: 16px
+	.btn
+		margin-top: 30px
+		font-size: 20px
+		width: 250px
+
+footer
+	color: lighten($blue, 25%)
+	font-size: 16px
+	padding-top: 40px
+	background-color: #485a7f
+	flex-grow: 0
+	a
+		color: inherit
+	.footer_logo
+		text-align: right
+		font-size: 24px
+		letter-spacing: 1px
+		line-height: 1.1
+		color: #ffffff
+		padding-bottom: 30px
+		span
+			font-size: 16px
+			color: lighten($blue, 25%)
+	.footer_contacts
+		font-size: 16px
+		padding-bottom: 20px
+		ul
+			list-style: none
+			li
+				color: lighten($blue, 25%)
+				margin-bottom: 5px
+				i
+					color: lighten($accent, 15%)
+					display: inline-block
+					margin-right: 10px
+	.legal-information
+		font-size: 14px
+		padding-top: 15px
+		padding-bottom: 10px
+		border-top: 1px solid rgba(#fff, .2)
+
+
+
+// Price Page
+.price
+	table
+		tr
+			td, th
+				padding: 10px 15px
+				border: 1px solid lighten($blue, 30%)
+			td:nth-child(2), td:nth-child(3), th
+				text-align: center
+				white-space: nowrap
+			td:nth-child(3)
+				text-align: right
+	.excel_logo
+		img
+			max-width: 20px
+			margin-right: 10px
+			margin-left: 3px
+			vertical-align: center
+
+@import "media" // Always at the end

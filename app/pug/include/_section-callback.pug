@@ -1,0 +1,22 @@
+article.callback
+	.container
+		h2.text-center.callback-link.active Заказ звонка
+		.row
+			.col-xl-6.offset-xl-3.col-lg-8.offset-lg-2.col-md-10.offset-md-1
+				form.callback-form
+					input(type='hidden', name='project_name', value='ascomproject')
+					input(type='hidden', name='admin_email', value='cheps@list.ru')
+					input(type='hidden', name='form_subject', value='Заявка с сайта Ascomproject')
+					//- END Hidden Required Fields
+					.row
+						.col-sm-6
+							input(type='text', name='Имя', placeholder='Представьтесь', required, autocomplete="off")
+						.col-sm-6
+							input.mask-phone(type='tel', name='Телефон', placeholder='Ваш номер для связи', required, autocomplete="off")
+					input(type="checkbox", required, id="conditionsCheck2")
+					label(for="conditionsCheck2").conditions
+						|  Я согласен с 
+						a(href="#")   условиями обработки личных данных
+					div.text-center.btn-box
+						button.btn Рассчитайте и мне
+				

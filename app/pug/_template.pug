@@ -1,0 +1,103 @@
+doctype html
+html(lang="ru")
+	head
+		meta(charset="utf-8")
+		block title
+		meta("description" content="")
+		meta(http-equiv="X-UA-Compatible" content="IE=edge")
+		meta(name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1")
+		meta(property="og:image" content="path/to/image.jpg")
+		
+		link(rel="shortcut icon", href="img/favicon/favicon.png" type="image/x-icon")
+		link(rel="apple-touch-icon", href="img/favicon/apple-touch-icon.png")
+		link(rel="apple-touch-icon", size="72x72" href="img/favicon/apple-touch-icon-72x72.png")
+		link(rel="apple-touch-icon", size="114x114" href="img/favicon/apple-touch-icon-114x114.png")
+
+		//Chrome, Firefox OS and Opera
+		meta(name="theme-color", content="#000")
+
+		//Windows Phone
+		meta(name="msapplication-navbutton-color", content="#000")
+			
+		//iOS Safari
+		meta(name="apple-mobile-web-app-status-bar-style", content="#000")
+
+		// Preloader styles
+		link(rel="stylesheet", href="css/preloader.min.css")
+	body
+		.body-wrap
+			#preloader
+				#loader
+					img(src="img/logo.svg").i-svg
+			header#header
+				.top-bar
+					.container
+						.row.align-items-center
+							.col-lg-10.top-bar-links
+								.logo-text  Аскомпроект - aрхитектурно-проектная организация, г. Москва
+								.contacts
+									a(href="mailto:mail@ascomproject.ru") mail@ascomproject.ru
+									a(href="tel:+79999009900") +7 999 900 99 00
+
+							.col-lg-2.align-content-center
+								a.btn.popup(href="#callbackWindow") Заказать звонок
+
+				.top-menu
+					.container
+						.row.align-items-center
+							.col-md-2.col-sm-3.col-4
+								.logo
+									a(href="index.html")
+										img(src="img/logo.svg", alt="Logo АСКОМПРОЕКТ").i-svg
+
+							.col-md-10.col-sm-9.col-8
+								.top-menu
+									a(href="#callbackWindow").btn.fixed-button.popup Заказать звонок
+									ul.menu
+										li
+											a(href="about.html") О нас
+										li
+											a(href="price.html") Цены
+										li
+											a(href="primery.html") Примеры работ
+										li
+											a(href="contacts.html") Контакты
+									button.hamburger.hamburger--spring
+										span.hamburger-box
+											span.hamburger-inner
+
+
+			block content
+		footer
+			.container
+				.row
+					.col-md-8
+						.footer_contacts
+							ul
+								li
+									i.icon-location
+									|  115193, Москва, 7-я Кожуховская ул, д. 15, стр. 1
+								li
+									i.icon-phone
+									|  +7 999 900 99 00
+								li
+									i.icon-mail
+									|  mail@ascomproject.ru
+					.col-md-4
+						p.footer_logo АСКОМПРОЕКТ
+							br
+							span  архитектурно-проектная организация
+				.row
+					.col
+						.legal-information.text-center
+							| 2018 &copy; ООО"Аскомпроект" |
+							a(href="#")   Политика конфиденциальности
+
+
+
+
+
+
+
+		link(rel="stylesheet", href="css/main.min.css")
+		script(src="js/scripts.min.js")
