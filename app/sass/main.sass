@@ -14,13 +14,14 @@ body
 	display: flex
 	flex-direction: column
 	font-size: 20px
-	min-width: 320px
 	min-height: 100vh
 	position: relative
-	line-height: 1.65
+	line-height: 1.5
 	font-family: $default-font
 	overflow-x: hidden
 	color: $text
+	min-width: 320px
+
 	input, textarea
 		border: #666 1px solid
 		outline: none
@@ -74,6 +75,29 @@ b, strong
 		color: #ffffff
 		background-color: $accent
 		text-decoration: none
+
+.callback
+	margin-top: 60px
+	padding-top: 60px
+	padding-bottom: 60px
+	background-color: lighten($gray, 30%)
+	h2
+		margin-bottom: 30px
+	input
+		padding: 3px 15px
+		background-color: transparent
+		border: 1px $gray solid
+		border-radius: 3px
+		transition: background-color .25s ease
+		&:hover, &:focus
+			background-color: rgba(#fff, .3)
+	label
+		font-size: 16px
+	.btn
+		margin-top: 30px
+		font-size: 20px
+		width: 250px
+
 #header
 	margin-bottom: 30px
 	.top-bar
@@ -167,76 +191,6 @@ b, strong
 			display: none
 
 
-
-// Main Page
-.first_screen
-	h2
-		margin-top: 50px
-		font-size: 40px
-
-		text-transform: uppercase
-		letter-spacing: 3px
-		span
-			font-weight: normal
-			color: $blue
-			text-transform: lowercase
-
-// About Page
-.about
-	h1, .before_h1
-		display: inline
-		font-size: inherit
-
-	ul
-		line-height: 2
-		list-style: none
-		li
-			&:before
-				content: '✔'
-				margin-right: 10px
-				color: $blue
-.primery
-	h2
-		margin-top: 60px
-	table
-		width: 100%
-		max-width: 700px
-		margin: 20px auto 30px
-		font-size: 16px
-		td, th
-			text-align: center
-			border: 1px solid
-			padding: 5px 10px
-		td
-			&:nth-child(3)
-				text-align: left
-	.img-box
-		margin-bottom: 30px
-		img
-			max-width: 1000px
-
-.callback
-	margin-top: 60px
-	padding-top: 60px
-	padding-bottom: 60px
-	background-color: lighten($gray, 30%)
-	h2
-		margin-bottom: 30px
-	input
-		padding: 3px 15px
-		background-color: transparent
-		border: 1px $gray solid
-		border-radius: 3px
-		transition: background-color .25s ease
-		&:hover, &:focus
-			background-color: rgba(#fff, .3)
-	label
-		font-size: 16px
-	.btn
-		margin-top: 30px
-		font-size: 20px
-		width: 250px
-
 footer
 	color: lighten($blue, 25%)
 	font-size: 16px
@@ -272,6 +226,72 @@ footer
 		padding-top: 15px
 		padding-bottom: 10px
 		border-top: 1px solid rgba(#fff, .2)
+
+
+/////////////// Main Page
+.first_screen
+	h2
+		margin-top: 50px
+		font-size: 40px
+
+		text-transform: uppercase
+		letter-spacing: 3px
+		span
+			font-weight: normal
+			color: $blue
+			text-transform: lowercase
+
+/////////////// About Page
+.about
+	h1, .before_h1
+		display: inline
+		font-size: inherit
+
+	ul
+		line-height: 2
+		list-style: none
+		li
+			&:before
+				content: '✔'
+				margin-right: 10px
+				color: $blue
+/////////////// page primery
+.primery
+	h2
+		margin-top: 60px
+	ul
+		list-style: none
+		li
+			margin-bottom: 10px
+			&:before
+				content: ''
+				display: inline-block
+				width: 24px
+				height: 24px
+				margin-right: 10px
+				vertical-align: middle
+				background-image: url('../img/pencil.png')
+					
+
+	table
+		width: 100%
+		max-width: 900px
+		margin: 20px auto 30px
+		font-size: 16px
+		line-height: 1.2
+		td, th
+			text-align: center
+			border: 1px solid
+			padding: 5px 10px
+		td
+	.img-box
+		margin-bottom: 30px
+		img
+			max-width: 1000px
+
+
+
+
 
 
 
