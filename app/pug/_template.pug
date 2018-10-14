@@ -33,25 +33,25 @@ html(lang="ru")
 				.top-bar
 					.container
 						.row.align-items-center
-							.col-lg-10.top-bar-links
+							.col-10.top-bar-links
 								.logo-text  Аскомпроект - aрхитектурно-проектная организация, г. Москва
 								.contacts
 									a(href="mailto:mail@ascomproject.ru") mail@ascomproject.ru
-									a(href="tel:+79999009900") +7 999 900 99 00
+									a(href="tel:+74993908526") 8 (499) 390-85-26
 
-							.col-lg-2.align-content-center
+							.col-2.align-content-center
 								a.btn.popup(href="#callbackWindow") Заказать звонок
 
 				.top-menu
 					.container
 						.row.align-items-center
-							.col-md-2.col-sm-3.col-4
+							.col-2
 								.logo
 									a(href="index.html")
 										img(src="img/logo.svg", alt="Logo АСКОМПРОЕКТ").i-svg
 
-							.col-md-10.col-sm-9.col-8
-								.top-menu
+							.col-10
+								.menu
 									a(href="#callbackWindow").btn.fixed-button.popup Заказать звонок
 									ul.menu
 										li
@@ -60,18 +60,18 @@ html(lang="ru")
 											a(href="price.html") Цены
 										li
 											a(href="primery.html") Примеры работ
-										//li
-										//	a(href="contacts.html") Контакты
+										li
+											a(href="info.html") Полезная информация
 									button.hamburger.hamburger--spring
 										span.hamburger-box
 											span.hamburger-inner
 
-
+			block breadcrumbs
 			block content
 		footer
 			.container
 				.row
-					.col-md-8
+					.col-8
 						.footer_contacts
 							ul
 								li
@@ -79,11 +79,13 @@ html(lang="ru")
 									|  115193, Москва, 7-я Кожуховская ул, д. 15, стр. 1
 								li
 									i.icon-phone
-									|  +7 999 900 99 00
+									a(href="tel:+74993908526") 8 (499) 390-85-26
+									| ,
+									a(href="tel:+79296528599")  +7 (929) 652-85-99
 								li
 									i.icon-mail
-									|  mail@ascomproject.ru
-					.col-md-4
+									a(href="mailto:mail@ascomproject.ru") mail@ascomproject.ru
+					.col-4
 						p.footer_logo АСКОМПРОЕКТ
 							br
 							span  архитектурно-проектная организация

@@ -1,11 +1,19 @@
 extends _template.pug
 block title
     title Пример работ #3 | АСКОМПРОЕКТ
+block breadcrumbs
+    .container
+        ul.breadcrumbs
+            li
+                a(href="index.html") Главная
+            li
+                a(href="primery.html") Примеры работ
+            li
+                a(href="primer3.html") Пример работ #3
 block content
-    main.primery#primer3
+    main.primer#primer3
         .container
-            h1 Перепланировка квартир №43 и №44 (объединение)
-            hr
+            h1.text-center Перепланировка квартир №43 и №44 (объединение)
             h3 Описание работ
             p Перепланировка квартир №43 и №44 заключается в объединении квартир за счет демонтажа ненесущих межквартирных стен и перегородок. <br> Вновь образованной квартире присваивается №44.
             br
@@ -502,5 +510,10 @@ block content
 
 
 
+            br
+            p.text-right
+                a(href="download/primer3.zip" target="_blank" title="Download: primer3.zip")
+                    img(src="img/primery/pdf.jpg")
+                    |  Скачать проект в формате <b>.pdf</b>
     include include/_section-callback.pug
 

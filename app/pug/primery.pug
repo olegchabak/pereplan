@@ -1,12 +1,64 @@
 extends _template.pug
 block title
     title Примеры работ АСКОМПРОЕКТ
+block breadcrumbs
+    .container
+        ul.breadcrumbs
+            li
+                a(href="index.html") Главная
+            li
+                a(href="primery.html") Примеры работ
 block content
     main.primery#primery
         .container
-            h1 Примеры работ Аскомпроект
-            a(href="primer1.html") primer1.html
-            br
-            a(href="primer2.html") primer2.html
-            br
-            a(href="primer3.html") primer3.html
+            h1.text-center Примеры работ компании Аскомпроект
+            p В данном разделе представлены основные планы из проектов перепланировок квартир:
+            ul
+                li план "до перепланировки";
+                li планы "демонтажа и монтажа конструкций";
+                li план "после перепланировки".
+            p
+                strong Планы дают полное представление о планируемых работах, именно на них инспектора обращают основное внимание.
+
+            .primery-box
+                .row
+                    .col-4
+                        .primery-box-item
+                            .primery-box-item-header
+                                h3.text-center
+                                    a(href="primer1.html") Перепланировка и переустройство квартиры №16
+                            .primery-box-item-image
+                                a(href="primer1.html")
+                                    img(src="img/primery/primer1/montage.jpg")
+                            .primery-box-item-description
+                                |1. Объединение уборной и ванной комнат и расширение вновь образованного санузла за счет коридора.
+                                br
+                                |2. Объединение кухни с гостиной за счет демонтажа ненесущей перегородки, изменение размеров жилых комнат и устройства гардеробной.
+                            .btn-box.text-center
+                                a(href="primer1.html").btn Смотреть проект
+                    .col-4
+                        .primery-box-item
+                            .primery-box-item-header
+                                h3.text-center
+                                    a(href="primer2.html") Перепланировка и переустройство помещения №IX
+                            .primery-box-item-image
+                                a(href="primer2.html")
+                                    img(src="img/primery/primer2/montage.jpg")
+                            .primery-box-item-description
+                                | Демонтаж ненесущих внутренних стен и перегородок и монтаж новых ненесущих перегородок и дверных блоков.
+                            .btn-box.text-center
+                                a(href="primer2.html").btn Смотреть проект
+                    .col-4
+                        .primery-box-item
+                            .primery-box-item-header
+                                h3.text-center
+                                    a(href="primer3.html") Перепланировка и переустройство (объединение) квартир №43 и 44
+                            .primery-box-item-image
+                                a(href="primer3.html")
+                                    img(src="img/primery/primer3/montage.jpg")
+                            .primery-box-item-description
+                                | Объединение двух квартир за счет демонтажа ненесущих межквартирных стен и перегородок.
+                            .btn-box.text-center
+                                a(href="primer3.html").btn Смотреть проект
+
+        include include/_section-callback.pug

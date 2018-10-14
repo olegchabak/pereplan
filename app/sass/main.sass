@@ -18,21 +18,30 @@ body
 	position: relative
 	line-height: 1.5
 	font-family: $default-font
-	overflow-x: hidden
+	overflow-x: auto
 	color: $text
-	min-width: 320px
+	min-width: 1140px
 
-	input, textarea
-		border: #666 1px solid
-		outline: none
-		&:focus:required:invalid
-			border-color: red
-		&:required:valid
-			border-color: green
-
+input, textarea
+	border: #666 1px solid
+	outline: none
+	&:focus:required:invalid
+		border-color: red
+	&:required:valid
+		border-color: green
+h1, .h1
+	font-weight: normal
+	text-shadow: 2px 2px 0 rgba($blue, .3)
+	margin-bottom: 40px
+svg
+	max-width: 100%
+	height: auto
+.text-right
+	text-align: right
 .body-wrap
 	flex-grow: 2
 	height: 100%
+	min-width: 1140px
 img
 	display: inline-block
 	max-width: 100%
@@ -99,7 +108,6 @@ b, strong
 		width: 250px
 
 #header
-	margin-bottom: 30px
 	.top-bar
 		color: $gray
 		&-links
@@ -124,6 +132,11 @@ b, strong
 		display: flex
 		padding-bottom: 10px
 		padding-top: 10px
+		background-color: #ffffff
+		width: 100%
+		z-index: 2
+		box-shadow: 0 1px 1px transparent
+		transition: box-shadow .7s ease
 		.logo
 			max-width: 160px
 			height: auto
@@ -142,6 +155,7 @@ b, strong
 					color: $gray
 					font-size: 25px
 				svg
+					transition: width .5s ease
 					path
 						transition: fill .25s ease
 					.red
@@ -150,18 +164,21 @@ b, strong
 						fill: #000
 			&:hover, &:focus
 				svg
+
 					.red
 						fill: $blue
 					.black
 						fill: $text
-
 		.fixed-button
-			display: none
+			transition: opacity .5s ease, transform .5s ease
+			opacity: 0
+			transform: scale(0.4)
 		.menu
 			display: flex
 			flex-basis: 100%
 			list-style: none
 			justify-content: flex-end
+			margin-bottom: 0
 			li
 				position: relative
 				margin-left: 30px
@@ -186,10 +203,44 @@ b, strong
 				&:hover, &:focus
 					&::after
 						transform: scale(1)
-
 		.hamburger
 			display: none
-
+		&.sticky
+			box-shadow: 0 1px 1px rgba($text, .1)
+			position: fixed
+			left: 0
+			top: 0
+			.fixed-button
+				opacity: 1
+				transform: scale(1)
+			svg
+				width: 50px
+.breadcrumbs
+	margin-bottom: 40px
+	list-style: none
+	padding: 0
+	li
+		position: relative
+		display: inline-block
+		padding: 0 15px 0 0
+		margin-left: 20px
+		a
+			display: block
+			font-size: 16px
+		&:after
+			position: absolute
+			content: '-'
+			display: inline-block
+			top: -5px
+			left: 100%
+		&:last-child
+			padding-left: 15px
+			background-color: rgba(blue, .1)
+			transform: skew(-45deg)
+			&:after
+				display: none
+			a
+				transform: skew(45deg)
 
 footer
 	color: lighten($blue, 25%)
@@ -197,6 +248,7 @@ footer
 	padding-top: 40px
 	background-color: #485a7f
 	flex-grow: 0
+	min-width: 1140px
 	a
 		color: inherit
 	.footer_logo
@@ -230,16 +282,37 @@ footer
 
 /////////////// Main Page
 .first_screen
-	h2
-		margin-top: 50px
-		font-size: 40px
+	&-slogan
+		&-head
+			margin-top: 50px
+			font-size: 50px
+			text-transform: uppercase
 
-		text-transform: uppercase
-		letter-spacing: 3px
-		span
-			font-weight: normal
-			color: $blue
-			text-transform: lowercase
+			svg
+				fill: $text
+				max-width: 80px
+				margin-left: 20px
+		&-subhead
+			margin-top: 50px
+			font-weight: bold
+			font-size: 30px
+			text-transform: initial
+			span
+				position: relative
+				z-index: 1
+				&::before
+					content: ''
+					position: absolute
+					display: block
+					width: 100%
+					height: 35%
+					top: 65%
+					left: 0
+					background-color: rgba($blue, .3)
+					z-index: -1
+
+
+
 
 /////////////// About Page
 .about
@@ -257,6 +330,32 @@ footer
 				color: $blue
 /////////////// page primery
 .primery
+	&-box
+		margin-top: 60px
+		margin-bottom: 60px
+		&-item
+			border: 1px solid rgba($blue, .1)
+
+			&-header
+				h3
+					font-weight: normal
+			&-image
+				display: flex
+				align-items: center
+				justify-content: center
+			&-description
+				padding: 20px
+				background: linear-gradient(to bottom, transparent, rgba($blue, .1))
+			.btn-box
+				background-color: rgba($blue, .1)
+				padding-top: 30px
+				padding-bottom: 30px
+				.btn
+					font-size: 16px
+					padding: 5px 5px
+
+
+.primer
 	h2
 		margin-top: 60px
 	ul
@@ -291,10 +390,6 @@ footer
 
 
 
-
-
-
-
 // Price Page
 .price
 	table
@@ -313,5 +408,35 @@ footer
 			margin-right: 10px
 			margin-left: 3px
 			vertical-align: center
+
+///////////// page info
+.info
+	ul.yes
+		list-style: none
+		li::before
+			color: rgba($blue, .6)
+			margin-right: 15px
+			content: '\2611'
+	ul.maybe
+		list-style: none
+		li::before
+			color: rgba($blue, .6)
+			margin-right: 15px
+			content: '\21D4'
+	ul.no
+		list-style: none
+		li::before
+			color: rgba($accent, .6)
+			margin-right: 15px
+			content: '\2612'
+	ul.pen
+		list-style: none
+		li::before
+			color: $gray
+			margin-right: 15px
+			content: '\2712'
+	h3
+		text-align: center
+		margin-top: 40px
 
 @import "media" // Always at the end

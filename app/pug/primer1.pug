@@ -1,11 +1,19 @@
 extends _template.pug
 block title
 	title Пример работ #1 | АСКОМПРОЕКТ
+block breadcrumbs
+	.container
+		ul.breadcrumbs
+			li
+				a(href="index.html") Главная
+			li
+				a(href="primery.html") Примеры работ
+			li
+				a(href="primer1.html") Пример работ #1
 block content
-	main.primery#primer1
+	main.primer#primer1
 		.container
-			h1 Перепланировка квартиры №16
-			hr
+			h1.text-center Перепланировка квартиры №16
 			h3 Описание работ
 			p Перепланировка квартиры №16 заключается в объединении уборной и ванной комнат и расширения вновь образованного санузла за счет коридора, объединении кухни с гостиной за счет демонтажа ненесущей перегородки, изменении размеров жилых комнат и устройства гардеробной.
 			br
@@ -282,5 +290,10 @@ block content
 					td
 					td
 					td
+			br
+			p.text-right
+				a(href="download/primer1.zip" target="_blank" title="Download: primer1.zip")
+					img(src="img/primery/pdf.jpg")
+					|  Скачать проект в формате <b>.pdf</b>
 	include include/_section-callback.pug
 

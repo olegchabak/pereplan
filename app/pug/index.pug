@@ -1,14 +1,20 @@
 extends _template.pug
 block title
 	title Главная
+block breadcrumbs
+
 block content
 	section.first_screen
 		.container
 			.row
 				.col-5
-					h2 Перепланировка
+					.first_screen-slogan
+					.first_screen-slogan-head Перепланировка
+						img(src="img/compass.svg").i-svg
+					.first_screen-slogan-subhead
+						span С нами это просто.
 						br
-						span  это просто
+						span Мы сделаем всё за Вас!
 				.col-7
 					.img-box
 						img(src="img/1.jpg")

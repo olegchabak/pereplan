@@ -1,9 +1,17 @@
 extends _template.pug
 block title
 	title Прайс-лист Аскомпроект
+block breadcrumbs
+	.container
+		ul.breadcrumbs
+			li
+				a(href="index.html") Главная
+			li
+				a(href="price.html") Прайс-лист
 block content
 	main.price
 		.container
+			h1.text-center Прайс-лист цен на услуги Аскомпроект
 			table
 				tbody
 					tr

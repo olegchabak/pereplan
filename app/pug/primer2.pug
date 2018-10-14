@@ -1,8 +1,17 @@
 extends _template.pug
 block title
     title Пример работ #2 | АСКОМПРОЕКТ
+block breadcrumbs
+    .container
+        ul.breadcrumbs
+            li
+                a(href="index.html") Главная
+            li
+                a(href="primery.html") Примеры работ
+            li
+                a(href="primer2.html") Пример работ #2
 block content
-    main.primery#primer2
+    main.primer#primer2
         .container
             h1 Перепланировка и переустройство помещения №IX
             hr
@@ -588,5 +597,10 @@ block content
 
 
 
+            br
+            p.text-right
+                a(href="download/primer2.zip" target="_blank" title="Download: primer2.zip")
+                    img(src="img/primery/pdf.jpg")
+                    |  Скачать проект в формате <b>.pdf</b>
     include include/_section-callback.pug
 

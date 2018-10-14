@@ -31,7 +31,26 @@ $(function() {
             $img.replaceWith($svg);
         }, 'xml');
     }); //End change Img on SVG
+    setTimeout(function() {
+        $('.primery-box-item-header').equalHeights();
+        $('.primery-box-item-image').equalHeights();
+        $('.primery-box-item-description').equalHeights();
+    },400);
 
-    // *** Preloader ***
+    //fixed menu
+    var topMenu = $('.top-menu');
+    var menuOffset = topMenu.offset().top;
+    var menuHeight = topMenu.outerHeight();
+    $(window).on('scroll', function () {
+        var scroll = +$(window).scrollTop();
+        if (scroll > menuOffset) {
+            topMenu.addClass('sticky').prev().css("margin-bottom", menuHeight);
+        } else {
+            topMenu.removeClass('sticky').prev().css("margin-bottom", 0);
+        }
+    });
+
+
+    // *** Preloader (always last) ***
     $('#preloader').delay(800).fadeOut('slow');
 });
